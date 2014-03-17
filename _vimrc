@@ -95,6 +95,8 @@ map <silent> <F11> :if &guioptions =~# 'T' <Bar>
         \set guioptions+=m <Bar>
     \endif<CR>
 
+set laststatus=2                        " airline 状态栏
+
 
 
 """""""""""""""""""""""""""""""""" 清除高亮及空格 """"""""""""""""""""""""""""""""""

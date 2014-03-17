@@ -252,18 +252,18 @@ Coding时,使用`<TAB>`来弹出补全列表, 弹出后可执行的操作:
 
 实测, 将以下文本转换为表格:
 
-	Artist | Song | Album | Year
-	Pantera | Cemetery Gates | Cowboys from Hell | 1990
+	Artist | Song | Album | Year  
+	Pantera | Cemetery Gates | Cowboys from Hell | 1990  
 	Ozzy Osbourne | Let Me Hear You Scream | Scream | 2010
 
 结果如下:
 
-	+---------------+------------------------+-------------------+------+
-	| Artist        | Song                   | Album             | Year |
-	+---------------+------------------------+-------------------+------+
-	| Pantera       | Cemetery Gates         | Cowboys from Hell | 1990 |
-	+---------------+------------------------+-------------------+------+
-	| Ozzy Osbourne | Let Me Hear You Scream | Scream            | 2010 |
+	+---------------+------------------------+-------------------+------+  
+	| Artist        | Song                   | Album             | Year |  
+	+---------------+------------------------+-------------------+------+  
+	| Pantera       | Cemetery Gates         | Cowboys from Hell | 1990 |  
+	+---------------+------------------------+-------------------+------+  
+	| Ozzy Osbourne | Let Me Hear You Scream | Scream            | 2010 |  
 	+---------------+------------------------+-------------------+------+
 
 其它特殊效果:
@@ -284,6 +284,17 @@ Coding时,使用`<TAB>`来弹出补全列表, 弹出后可执行的操作:
 
 	b:tablify_cellLeftPadding      - 表格左对齐时, 左边留白宽度, 默认为1
 	b:tablify_cellRightPadding     - 表格右对齐时, 右边留白宽度, 默认为1
+
+
+
+## vim-airline
+
+	vim-airline : lean & mean statusline that's light as air
+	http://www.vim.org/scripts/script.php?script_id=4661
+	漂漂的状态栏
+	2014年3月17日 14:59:43
+
+默认在多窗口时才显示, 如果想要只有一个窗口时也显示该状态栏, 需要在vimrc中设置 `set laststatus=2`
 
 
 
@@ -319,7 +330,6 @@ There is no need to install pylint, rope or any other Python libraries on your s
 
 
 
-
 ## OTHERS TO BE ADD..
 
 
@@ -328,20 +338,21 @@ There is no need to install pylint, rope or any other Python libraries on your s
 
 ## 附1: pathogen安装对照表
 
-	+------------------------------------------------------+----------------------------------+
-	| PROJECT IN GITHUB                                    | LOCAL PATH                       |
-	+------------------------------------------------------+----------------------------------+
-	| git://github.com/tpope/vim-pathogen.git              | vimfiles/bundle/vim-pathogen     |
-	| git://github.com/vim-scripts/taglist.vim.git         | vimfiles/bundle/taglist          |
-	| git://github.com/wesleyche/SrcExpl.git               | vimfiles/bundle/SrcExpl          |
-	| git://github.com/scrooloose/nerdtree.git             | vimfiles/bundle/nerdtree         |
-	| git://github.com/wesleyche/Trinity.git               | vimfiles/bundle/Trinity          |
-	| git://github.com/scrooloose/nerdcommenter.git        | vimfiles/bundle/nerdcommenter    |
-	| git://github.com/fholgado/minibufexpl.vim.git        | vimfiles/bundle/minibufexpl      |
-	| git://github.com/mattn/emmet-vim.git                 | vimfiles/bundle/emmet-vim        |
-	| git://github.com/nathanaelkane/vim-indent-guides.git | vimfiles/bundle/vim-ident-guides |
-	| git://github.com/Stormherz/tablify.git               | vimfiles/bundle/tablity          |
-	| git://github.com/rkulla/pydiction.git                | vimfiles/bundle/pydiction        |
-	| git://github.com/klen/python-mode.git                | vimfiles/bundle/python-mode      |
-	+------------------------------------------------------+----------------------------------+
+	+----------------------------------------------------+----------------------------------+
+	| PROJECT IN GITHUB                                  | LOCAL PATH                       |
+	+----------------------------------------------------+----------------------------------+
+	| https://github.com/tpope/vim-pathogen              | vimfiles/bundle/vim-pathogen     |
+	| https://github.com/vim-scripts/taglist.vim         | vimfiles/bundle/taglist          |
+	| https://github.com/wesleyche/SrcExpl               | vimfiles/bundle/SrcExpl          |
+	| https://github.com/scrooloose/nerdtree             | vimfiles/bundle/nerdtree         |
+	| https://github.com/wesleyche/Trinity               | vimfiles/bundle/Trinity          |
+	| https://github.com/scrooloose/nerdcommenter        | vimfiles/bundle/nerdcommenter    |
+	| https://github.com/fholgado/minibufexpl.vim        | vimfiles/bundle/minibufexpl      |
+	| https://github.com/mattn/emmet-vim                 | vimfiles/bundle/emmet-vim        |
+	| https://github.com/nathanaelkane/vim-indent-guides | vimfiles/bundle/vim-ident-guides |
+	| https://github.com/Stormherz/tablify               | vimfiles/bundle/tablity          |
+	| https://github.com/rkulla/pydiction                | vimfiles/bundle/pydiction        |
+	| https://github.com/klen/python-mode                | vimfiles/bundle/python-mode      |
+	| https://github.com/bling/vim-airline               | vimfiles/bundle/vim-airline      |
+	+----------------------------------------------------+----------------------------------+
 
