@@ -188,8 +188,8 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType java set omnifunc=javacomplete#Complet
 
 "自动补全  pydiction
-let g:pydiction_location= $HOME . '\vimfiles\bundle\pydiction\complete_dict'
-let g:pydiction_menu_height = 20
+"let g:pydiction_location= $HOME . '\vimfiles\bundle\pydiction\complete_dict'
+"let g:pydiction_menu_height = 20
 
 
 
@@ -204,4 +204,19 @@ let g:indent_guides_guide_size = 1             "缩进提示线宽度为1
 
 """""""""""""""""""""""""""""""""" python-mode """"""""""""""""""""""""""""""""""
 " 十全大补丸, 配置项太多, 以后再说吧...
+
+
+
+"""""""""""""""""""""""""""""""""" neocomplcache """"""""""""""""""""""""""""""""""
+let g:neocomplcache_enable_at_startup = 1
+" open the snippet
+imap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
+smap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
+
+"jump to next placeholder
+imap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
+smap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 

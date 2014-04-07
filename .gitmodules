@@ -37,3 +37,21 @@
 [submodule "vimfiles/bundle/vim-airline"]
 	path = vimfiles/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
+[submodule "vimfiles/bundle/neocomplcache"]
+	path = vimfiles/bundle/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.vim
+[submodule "vimfiles/bundle/neosnippet"]
+	path = vimfiles/bundle/neosnippet
+	url = https://github.com/Shougo/neosnippet.vim
+[submodule "vimfiles/bundle/vim-multiple-cursors"]
+	path = vimfiles/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "vimfiles/bundle/vim-surround"]
+	path = vimfiles/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vimfiles/bundle/vim-sneak"]
+	path = vimfiles/bundle/vim-sneak
+	url = https://github.com/justinmk/vim-sneak
+[submodule "vimfiles/bundle/vim-markdown"]
+	path = vimfiles/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown

@@ -5,6 +5,8 @@
 
 项目所有文件位于`../gVimPortable/Data/settings`目录下
 
+使用Pathgen进行插件的统一管理, 结合Github, 很好很强大
+
 version: 2, based on the first conf: [vim-set](https://github.com/fatway/vim_set)
 
 refer: http://lostjs.com/2012/02/04/use-pathogen-and-git-to-manage-vimfiles/
@@ -332,27 +334,61 @@ There is no need to install pylint, rope or any other Python libraries on your s
 
 ## OTHERS TO BE ADD..
 
+neosnippet & neocomplcache & multiple-cursors & surround & sneak & markdown
+
+
+
+
+## DrawIt
+
+	DrawIt! : Ascii drawing plugin: lines, ellipses, arrows, fills, and more! 
+	http://www.vim.org/scripts/script.php?script_id=40
+	2014年4月7日 11:21:51
+
+### 说明
+该插件是以vimball的方式发布的（打包成.vba格式），常规的安装方式，文件还是被解压到vimfiles目录下，而非bundle目录.  
+
+	安装 :e DrawIt.vba & :so %
+	卸载 :RmVimball DrawIt.vba
+
+这里如果我们仍然想用pathogen来管理vba格式的插件，那么可以依照以下步骤操作：
+
+	:edit DrawIt.vba
+	:!mkdir $HOME\vimfiles\bundle\drawit
+	:UseVimball $HOME\vimfiles\bundle\drawit
+
+这样，DrawIt插件的文件就都被解压到 bundle 目录下，且自动执行了 helptags 命令。(不是子git模块形式)
+
+### 使用
+
+todo
 
 
 ---
 
 ## 附1: pathogen安装对照表
 
-	+----------------------------------------------------+----------------------------------+
-	| PROJECT IN GITHUB                                  | LOCAL PATH                       |
-	+----------------------------------------------------+----------------------------------+
-	| https://github.com/tpope/vim-pathogen              | vimfiles/bundle/vim-pathogen     |
-	| https://github.com/vim-scripts/taglist.vim         | vimfiles/bundle/taglist          |
-	| https://github.com/wesleyche/SrcExpl               | vimfiles/bundle/SrcExpl          |
-	| https://github.com/scrooloose/nerdtree             | vimfiles/bundle/nerdtree         |
-	| https://github.com/wesleyche/Trinity               | vimfiles/bundle/Trinity          |
-	| https://github.com/scrooloose/nerdcommenter        | vimfiles/bundle/nerdcommenter    |
-	| https://github.com/fholgado/minibufexpl.vim        | vimfiles/bundle/minibufexpl      |
-	| https://github.com/mattn/emmet-vim                 | vimfiles/bundle/emmet-vim        |
-	| https://github.com/nathanaelkane/vim-indent-guides | vimfiles/bundle/vim-ident-guides |
-	| https://github.com/Stormherz/tablify               | vimfiles/bundle/tablity          |
-	| https://github.com/rkulla/pydiction                | vimfiles/bundle/pydiction        |
-	| https://github.com/klen/python-mode                | vimfiles/bundle/python-mode      |
-	| https://github.com/bling/vim-airline               | vimfiles/bundle/vim-airline      |
-	+----------------------------------------------------+----------------------------------+
+	+----------------------------------------------------+--------------------------------------+
+	| PROJECT IN GITHUB                                  | LOCAL PATH                           |
+	+----------------------------------------------------+--------------------------------------+
+	| https://github.com/tpope/vim-pathogen              | vimfiles/bundle/vim-pathogen         |
+	| https://github.com/vim-scripts/taglist.vim         | vimfiles/bundle/taglist              |
+	| https://github.com/wesleyche/SrcExpl               | vimfiles/bundle/SrcExpl              |
+	| https://github.com/scrooloose/nerdtree             | vimfiles/bundle/nerdtree             |
+	| https://github.com/wesleyche/Trinity               | vimfiles/bundle/Trinity              |
+	| https://github.com/scrooloose/nerdcommenter        | vimfiles/bundle/nerdcommenter        |
+	| https://github.com/fholgado/minibufexpl.vim        | vimfiles/bundle/minibufexpl          |
+	| https://github.com/mattn/emmet-vim                 | vimfiles/bundle/emmet-vim            |
+	| https://github.com/nathanaelkane/vim-indent-guides | vimfiles/bundle/vim-ident-guides     |
+	| https://github.com/Stormherz/tablify               | vimfiles/bundle/tablity              |
+	| https://github.com/klen/python-mode                | vimfiles/bundle/python-mode          |
+	| https://github.com/bling/vim-airline               | vimfiles/bundle/vim-airline          |
+	| https://github.com/Shougo/neosnippet.vim           | vimfiles/bundle/neosnippet           |
+	| https://github.com/Shougo/neocomplcache.vim        | vimfiles/bundle/neocomplcache        |
+	| https://github.com/terryma/vim-multiple-cursors    | vimfiles/bundle/vim-multiple-cursors |
+	| https://github.com/tpope/vim-surround              | vimfiles/bundle/vim-surround         |
+	| https://github.com/justinmk/vim-sneak              | vimfiles/bundle/vim-sneak            |
+	| https://github.com/plasticboy/vim-markdown         | vimfiles/bundle/vim-markdown         |
+	+----------------------------------------------------+--------------------------------------+
+
 
