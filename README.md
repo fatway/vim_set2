@@ -66,12 +66,34 @@ refer: http://lostjs.com/2012/02/04/use-pathogen-and-git-to-manage-vimfiles/
 	 |     http://www.vim.org/scripts/script.php?script_id=273
 	 |     需要分析源代码的工具Ctags(http://ctags.sourceforge.net/)，
 	 |     解压缩后拷贝ctags.exe到app下的vim安装位置，或者放于system32
+	 |     快捷键:
+	 |		`<CR>`         跳到光标下tag所定义的位置，用鼠标双击此tag功能也一样
+	 |		`o`             在一个新打开的窗口中显示光标下tag
+	 |		`<Space>`       显示光标下tag的原型定义
+	 |		`u`             更新taglist窗口中的tag
+	 |		`s`             更改排序方式，在按名字排序和按出现顺序排序间切换
+	 |		`x`             taglist窗口放大和缩小，方便查看较长的tag
+	 |		`+`             打开一个折叠，同zo
+	 |		`-`             将tag折叠起来，同zc
+	 |		`*`             打开所有的折叠，同zR
+	 |		`=`             将所有tag折叠起来，同zM
+	 |		`[[`            跳到前一个文件
+	 |		`]]`            跳到后一个文件
+	 |		`q`             关闭taglist窗口
+	 |		`<F1>`          显示帮助
+	 |
 	 |-- SrcExpl
 	 |     http://www.vim.org/scripts/script.php?script_id=2179
 	 |     可以在定义跳转设定
 	 |-- The NERD tree
 	 |     http://www.vim.org/scripts/script.php?script_id=1658
-	 |     目录树
+	 |     目录树插件, 快捷键:
+	 |		`o`	展开左侧某个目录，再按一下就是合并目录 
+	 |		`t`	在新 Tab 中打开选中文件/书签，并跳到新 Tab
+	 |		`T`	在新 Tab 中打开选中文件/书签，但不跳到新 Tab
+	 |		`P`	跳到根结点
+	 |		`p`	跳到父结点
+	 |		`q`	关闭 NerdTree 窗口
 
 
 
@@ -149,6 +171,7 @@ Tips:
 
 4. 其它的不再列举, 参看官方文档, 这里再给一个执行键对照表
 
+
 	+--------+--------------------------------------------------------------------+
 	| 执行键 | 执行效果                                                           |
 	+--------+--------------------------------------------------------------------+
@@ -184,27 +207,6 @@ Tips:
 	let g:user_emmet_expandabbr_key = '<c-e>'
 	let g:use_emmet_complete_tag = 1
 
-
-
-
-## Pydiction
-
-	Tab-complete your Python code
-	http://www.vim.org/scripts/script.php?script_id=850
-	python代码补全插件
-	2014年1月13日 14:41:29
-
-Coding时,使用`<TAB>`来弹出补全列表, 弹出后可执行的操作:
-
-* `CTRL-Y`    Accept the currently selected match and stop completion.
-* `<Space>`   Accept the currently selected match and insert a space.
-* `CTRL-E`    Close the menu and not accept any match.
-
-需要在启动配置文件中设定'字典路径' 和'补全列表大小'(可选)
-
-	filetype plugin on
-	let g:pydiction_location = 'C:/vim/vimfiles/ftplugin/pydiction/complete-dict'
-	let g:pydiction_menu_height = 20  "The default menu height is 15.
 
 
 
@@ -332,36 +334,20 @@ There is no need to install pylint, rope or any other Python libraries on your s
 
 
 
-## OTHERS TO BE ADD..
+## CtrlP
 
-neosnippet & neocomplcache & multiple-cursors & surround & sneak & markdown
-
-
-
-
-## DrawIt
-
-	DrawIt! : Ascii drawing plugin: lines, ellipses, arrows, fills, and more! 
-	http://www.vim.org/scripts/script.php?script_id=40
-	2014年4月7日 11:21:51
+	ctrlp.vim : Fuzzy file, buffer, mru, tag, ... finder with regexp support. 
+	http://www.vim.org/scripts/script.php?script_id=3736
+	2014年6月26日 15:27:31
 
 ### 说明
-该插件是以vimball的方式发布的（打包成.vba格式），常规的安装方式，文件还是被解压到vimfiles目录下，而非bundle目录.  
+类似everything的快速文件查找与切换插件, 使用`<c-p>`打开
 
-	安装 :e DrawIt.vba & :so %
-	卸载 :RmVimball DrawIt.vba
 
-这里如果我们仍然想用pathogen来管理vba格式的插件，那么可以依照以下步骤操作：
 
-	:edit DrawIt.vba
-	:!mkdir $HOME\vimfiles\bundle\drawit
-	:UseVimball $HOME\vimfiles\bundle\drawit
-
-这样，DrawIt插件的文件就都被解压到 bundle 目录下，且自动执行了 helptags 命令。(不是子git模块形式)
-
-### 使用
-
+## OTHERS TO BE ADD..
 todo
+
 
 
 ---
@@ -389,6 +375,9 @@ todo
 	| https://github.com/tpope/vim-surround              | vimfiles/bundle/vim-surround         |
 	| https://github.com/justinmk/vim-sneak              | vimfiles/bundle/vim-sneak            |
 	| https://github.com/plasticboy/vim-markdown         | vimfiles/bundle/vim-markdown         |
+	| https://github.com/kien/ctrlp.vim                  | vimfiles/bundle/ctrlp                |
+	| https://github.com/mattn/calendar-vim              | vimfiles/bundle/calendar             |
+	| https://github.com/altercation/vim-colors-solarized| vimfiles/bundle/solarized            |
 	+----------------------------------------------------+--------------------------------------+
 
 

@@ -55,3 +55,12 @@
 [submodule "vimfiles/bundle/vim-markdown"]
 	path = vimfiles/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
+[submodule "vimfiles/bundle/ctrlp"]
+	path = vimfiles/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim
+[submodule "vimfiles/bundle/calendar"]
+	path = vimfiles/bundle/calendar
+	url = https://github.com/mattn/calendar-vim
+[submodule "vimfiles/bundle/solarized"]
+	path = vimfiles/bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized

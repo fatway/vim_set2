@@ -10,8 +10,7 @@ set nobackup                             " 关闭自动备份
 set nowb
 set noswapfile
 
-colorscheme slate                        " 使用配色方案
-
+"colorscheme slate                        " 使用配色方案
 
 
 """""""""""""""""""""""""""""""""" 插件管理 """"""""""""""""""""""""""""""""""
@@ -96,8 +95,8 @@ map <silent> <F11> :if &guioptions =~# 'T' <Bar>
     \endif<CR>
 
 set laststatus=2                        " airline 状态栏
-
-
+set background=dark
+colorscheme solarized                   " 自定义配色
 
 """""""""""""""""""""""""""""""""" 清除高亮及空格 """"""""""""""""""""""""""""""""""
 
@@ -187,10 +186,6 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType java set omnifunc=javacomplete#Complet
 
-"自动补全  pydiction
-"let g:pydiction_location= $HOME . '\vimfiles\bundle\pydiction\complete_dict'
-"let g:pydiction_menu_height = 20
-
 
 
 """""""""""""""""""""""""""""""""" 缩进线 """"""""""""""""""""""""""""""""""
@@ -199,11 +194,6 @@ autocmd FileType java set omnifunc=javacomplete#Complet
 let g:indent_guides_enable_on_vim_startup = 1  "启动时开启缩进线
 let g:indent_guides_start_level = 2            "从第二级开始进行提示
 let g:indent_guides_guide_size = 1             "缩进提示线宽度为1
-
-
-
-"""""""""""""""""""""""""""""""""" python-mode """"""""""""""""""""""""""""""""""
-" 十全大补丸, 配置项太多, 以后再说吧...
 
 
 
@@ -219,4 +209,23 @@ smap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
 
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+
+
+
+"""""""""""""""""""""""""""""""""" ctrlp """"""""""""""""""""""""""""""""""
+let g:ctrlp_max_height = 30
+set wildignore+=*.pyc,*.swp,*.zip,*.exe
+
+
+
+"""""""""""""""""""""""""""""""""" python-mode """"""""""""""""""""""""""""""""""
+" 十全大补丸
+map <leader>g :call RopeGotoDefinition()<CR>
+let ropevim_enable_shortcuts = 1
+let g:pymode_rope_goto_def_newwin = 'vnew'
+let g:pymode_rope_extended_complete = 1
+let g:pymode_breakpoint = 0
+let g:pymode_syntax = 1
+let g:pymode_syntax_builtin_objs = 0
+let g:pymode_syntax_builtin_funcs = 0
 
