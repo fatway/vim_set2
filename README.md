@@ -37,6 +37,9 @@ refer: http://lostjs.com/2012/02/04/use-pathogen-and-git-to-manage-vimfiles/
 
 	$ git submodule foreach 'git checkout master && git pull'
 
+	确保在master分支下的话, 使用下面进行更新
+	$ git submodule foreach 'git stash && git pull && git stash clear'
+
 ### 删除插件
 
 	$ rm -rf bundle/插件名

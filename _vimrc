@@ -4,13 +4,12 @@ set lines=40 columns=140                 " 设定窗口大小
 autocmd! bufwritepost _vimrc source %    " 修改后自动加载配置文件，无需重启
 set nocompatible                         " 禁用老的VI编辑模式
 set guifont=Consolas:h10.5                    " 设置字体，大小
-"set guioptions-=m                        " 隐藏menu
+set guioptions-=m                        " 隐藏menu
 set guioptions-=T                        " 隐藏toolbar
 set nobackup                             " 关闭自动备份
 set nowb
 set noswapfile
 
-"colorscheme slate                        " 使用配色方案
 
 
 """""""""""""""""""""""""""""""""" 插件管理 """"""""""""""""""""""""""""""""""
@@ -83,6 +82,12 @@ set fdm=indent      "启用代码折叠foldmethod,模式为indent，模式表
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
+" 切换窗口
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
 " F11 切换菜单和工具栏的显示状态
 "set guioptions-=m                      " 隐藏menu
 "set guioptions-=T                      " 隐藏toolbar
@@ -95,8 +100,8 @@ map <silent> <F11> :if &guioptions =~# 'T' <Bar>
     \endif<CR>
 
 set laststatus=2                        " airline 状态栏
-set background=dark
-colorscheme solarized                   " 自定义配色
+"set background=dark
+colorscheme solarized                   " 自定义配色方案
 
 """""""""""""""""""""""""""""""""" 清除高亮及空格 """"""""""""""""""""""""""""""""""
 
@@ -156,6 +161,11 @@ nmap <F9> :TrinityToggleTagList<CR>
 "nmap <F10> :TrinityToggleSourceExplorer<CR>
 
 
+"单独使用tree和tag插件
+nmap <leader>w :NERDTreeToggle<CR>
+nmap <leader>e :TlistToggle<CR>
+
+
 
 """""""""""""""""""""""""""""""""" tags管理 """"""""""""""""""""""""""""""""""
 " F12生成/更新tags文件
@@ -213,19 +223,33 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 
 
 """""""""""""""""""""""""""""""""" ctrlp """"""""""""""""""""""""""""""""""
-let g:ctrlp_max_height = 30
+let g:ctrlp_max_height = 10
 set wildignore+=*.pyc,*.swp,*.zip,*.exe
 
 
 
 """""""""""""""""""""""""""""""""" python-mode """"""""""""""""""""""""""""""""""
 " 十全大补丸
-map <leader>g :call RopeGotoDefinition()<CR>
-let ropevim_enable_shortcuts = 1
-let g:pymode_rope_goto_def_newwin = 'vnew'
-let g:pymode_rope_extended_complete = 1
-let g:pymode_breakpoint = 0
+let g:pymode = 1
+let g:pymode_warnings = 1
+let g:pymode_paths = []
+let g:pymode_folding = 1
+let g:pymode_quickfix_minheight = 3
+let g:pymode_quickfix_maxheight = 6
+
+let g:pymode_doc = 0
+"let g:pymode_run = 0           "禁用运行代码
+let g:pymode_breakpoint = 0    "禁用插入断点
+
+let g:pymode_lint_checkers = ['pylint', 'pyflakes', 'mccabe']
+
+let g:pymode_rope_lookup_project = 0   "解决代码提示出错
+let g:pymode_rope_complete = 1
+let g:pymode_rope_complete_on_dot = 1
+
+let g:pymode_rope_goto_definition_cmd = 'vnew'
 let g:pymode_syntax = 1
 let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
 
+"nmap <leader>g :RopeGotoDefinition<CR>
