@@ -348,6 +348,31 @@ There is no need to install pylint, rope or any other Python libraries on your s
 
 
 
+## TaskList
+
+	Eclipse like task list
+	http://www.vim.org/scripts/script.php?script_id=2607
+	2014年7月1日 11:02:34
+
+### 说明
+任务提示, 打开方式 `<leader>t`
+
+需要处自定义任务列表
+
+	let g:tlWindowPosition = 1  底部显示
+	let g:tlTokenList = ['TODO', 'UNDONE', 'HACK', 'WARN', 'NOTE']
+
+任务说明
+	TODO: 待完成任务
+	UNDONE: 未完成
+	HACK: 有问题需要修改
+	NOTE: 需要注意的事项
+	WARN: 警告（即代码有陷阱，需要特别注意）
+	ERROR: 错误的代码，且目前还无解。。
+	TEMP: 临时切换代码，如屏蔽某任务
+
+
+
 ## OTHERS TO BE ADD..
 todo
 
@@ -381,6 +406,7 @@ todo
 	| https://github.com/kien/ctrlp.vim                  | vimfiles/bundle/ctrlp                |
 	| https://github.com/mattn/calendar-vim              | vimfiles/bundle/calendar             |
 	| https://github.com/altercation/vim-colors-solarized| vimfiles/bundle/solarized            |
+	| https://github.com/vim-scripts/TaskList.vim        | vimfiles/bundle/tasklist             |
 	+----------------------------------------------------+--------------------------------------+
 
 

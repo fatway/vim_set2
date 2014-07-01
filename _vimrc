@@ -3,12 +3,34 @@
 set lines=40 columns=140                 " 设定窗口大小
 autocmd! bufwritepost _vimrc source %    " 修改后自动加载配置文件，无需重启
 set nocompatible                         " 禁用老的VI编辑模式
-set guifont=Consolas:h10.5                    " 设置字体，大小
+set guifont=Consolas:h10.5               " 设置字体，大小
 set guioptions-=m                        " 隐藏menu
 set guioptions-=T                        " 隐藏toolbar
 set nobackup                             " 关闭自动备份
 set nowb
 set noswapfile
+set laststatus=2                         " 始终显示状态栏
+
+" Ctrl + s 保存文件
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
+
+" 切换窗口
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" F11 切换菜单和工具栏的显示状态
+"set guioptions-=m                      " 隐藏menu
+"set guioptions-=T                      " 隐藏toolbar
+map <silent> <F11> :if &guioptions =~# 'T' <Bar>
+        \set guioptions-=T <Bar>
+        \set guioptions-=m <bar>
+    \else <Bar>
+        \set guioptions+=T <Bar>
+        \set guioptions+=m <Bar>
+    \endif<CR>
 
 
 
@@ -78,30 +100,11 @@ set fdm=indent      "启用代码折叠foldmethod,模式为indent，模式表
                     "diff    对没有更改的文本进行折叠
                     "marker  对文中的标志折叠
 
-" Ctrl + s 保存文件
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
 
-" 切换窗口
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
-" F11 切换菜单和工具栏的显示状态
-"set guioptions-=m                      " 隐藏menu
-"set guioptions-=T                      " 隐藏toolbar
-map <silent> <F11> :if &guioptions =~# 'T' <Bar>
-        \set guioptions-=T <Bar>
-        \set guioptions-=m <bar>
-    \else <Bar>
-        \set guioptions+=T <Bar>
-        \set guioptions+=m <Bar>
-    \endif<CR>
-
-set laststatus=2                        " airline 状态栏
 "set background=dark
 colorscheme solarized                   " 自定义配色方案
+
+
 
 """""""""""""""""""""""""""""""""" 清除高亮及空格 """"""""""""""""""""""""""""""""""
 
@@ -253,3 +256,13 @@ let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
 
 "nmap <leader>g :RopeGotoDefinition<CR>
+
+
+
+"""""""""""""""""""""""""""""""""" tasklist """"""""""""""""""""""""""""""""""
+let g:tlWindowPosition = 1   "底部显示
+let g:tlTokenList = ['TODO', 'UNDONE', 'HACK']
+
+
+
+"""""""""""""""""""""""""""""""""" others """"""""""""""""""""""""""""""""""
