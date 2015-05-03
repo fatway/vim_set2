@@ -373,6 +373,80 @@ There is no need to install pylint, rope or any other Python libraries on your s
 
 
 
+## vim-startify
+
+	A start screen for Vim
+	https://github.com/mhinz/vim-startify
+	2014年7月4日 08:46:40
+
+### 说明
+替换vim的启动界面显示内容, 主要列出buffer列表和最近打开文件列表
+
+在文件列表中, 可用以下指令打开文件
+
+	b  当前窗口打开
+	s  split窗口打开
+	v  vsplit窗口打开
+	t  tab中打开
+	<cr>  执行以上
+
+正常的文件处理过程中, 如果要重现该启动界面, 可用`:Startify`实现
+
+
+
+## a.vim
+
+	Alternate Files quickly (.c --> .h etc)
+	http://www.vim.org/scripts/script.php?script_id=31
+	2014年7月4日 09:38:33
+
+### 说明
+c/cpp快速头文件与函数文件切换
+
+	:A           switches to the header file corresponding to the current file being edited (or vise versa)
+	:AS          splits and switches
+	:AV          vertical splits and switches
+	:AT          new tab and switches
+	:AN          cycles through matches
+	:IH          switches to file under cursor
+	:IHS         splits and switches
+	:IHV         vertical splits and switches
+	:IHT         new tab and switches
+	:IHN         cycles through matches
+	<Leader>ih   switches to file under cursor
+	<Leader>is   switches to the alternate file of file under cursor (e.g. on  <foo.h> switches to foo.cpp)
+	<Leader>ihn  cycles through matches
+
+
+
+
+## fugitive.vim
+	
+	a Git wrapper so awesome, it should be illegal 
+	http://www.vim.org/scripts/script.php?script_id=2975
+	2014年7月7日 17:15:23
+
+### 说明
+帮助文档  `:help fugitive`
+
+
+
+## tabular
+
+	Vim script for text filtering and alignment
+	https://github.com/godlygeek/tabular
+	2014年8月30日 09:40:07
+
+### 说明
+很有用的代码对齐辅助, 帮助整理连续的变量定义或者字典结构, 方便阅读
+帮助  ':help tabular'
+
+### 用法
+
+
+
+
+
 ## OTHERS TO BE ADD..
 todo
 
@@ -399,6 +473,7 @@ todo
 	| https://github.com/bling/vim-airline               | vimfiles/bundle/vim-airline          |
 	| https://github.com/Shougo/neosnippet.vim           | vimfiles/bundle/neosnippet           |
 	| https://github.com/Shougo/neocomplcache.vim        | vimfiles/bundle/neocomplcache        |
+	| https://github.com/honza/vim-snippets              | vimfiles/bundle/vim-snippets         |
 	| https://github.com/terryma/vim-multiple-cursors    | vimfiles/bundle/vim-multiple-cursors |
 	| https://github.com/tpope/vim-surround              | vimfiles/bundle/vim-surround         |
 	| https://github.com/justinmk/vim-sneak              | vimfiles/bundle/vim-sneak            |
@@ -407,6 +482,9 @@ todo
 	| https://github.com/mattn/calendar-vim              | vimfiles/bundle/calendar             |
 	| https://github.com/altercation/vim-colors-solarized| vimfiles/bundle/solarized            |
 	| https://github.com/vim-scripts/TaskList.vim        | vimfiles/bundle/tasklist             |
+	| https://github.com/mhinz/vim-startify              | vimfiles/bundle/vim-startify         |
+	| https://github.com/vim-scripts/a.vim               | vimfiles/bundle/a.vim                |
+	| https://github.com/tpope/vim-fugitive              | vimfiles/bundle/vim-fugitive         |
 	+----------------------------------------------------+--------------------------------------+
 
 

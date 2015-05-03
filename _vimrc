@@ -9,7 +9,10 @@ set guioptions-=T                        " 隐藏toolbar
 set nobackup                             " 关闭自动备份
 set nowb
 set noswapfile
+
 set laststatus=2                         " 始终显示状态栏
+"let g:mapleader = ';'                    " leader键
+
 
 " Ctrl + s 保存文件
 nmap <c-s> :w<CR>
@@ -32,6 +35,8 @@ map <silent> <F11> :if &guioptions =~# 'T' <Bar>
         \set guioptions+=m <Bar>
     \endif<CR>
 
+map <F3> <c-b>
+map <F4> <c-f>
 
 
 """""""""""""""""""""""""""""""""" 插件管理 """"""""""""""""""""""""""""""""""
@@ -90,6 +95,7 @@ set mouse=a         " 在所有模式下启用鼠标
 set ic              " 搜索时忽略大小写
 set hls is          " 高亮搜索结果
 set nowrap          " 设置不自动折行
+set cursorline      " 高亮当前行
 
 
 set fdm=indent      "启用代码折叠foldmethod,模式为indent，模式表
@@ -133,6 +139,16 @@ function! CleanupBuffer(keep)
   endif
   exec "normal " . lnum . "G"
 endfunction
+
+
+
+"""""""""""""""""""""""""""""""""" minibuffer """"""""""""""""""""""""""""""""""
+map <Leader>mbe :MBEOpen<cr>
+map <Leader>mbc :MBEClose<cr>
+map <Leader>mbt :MBEToggle<cr>
+
+noremap <C-TAB>   :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
 
 
 
@@ -210,22 +226,8 @@ let g:indent_guides_guide_size = 1             "缩进提示线宽度为1
 
 
 
-"""""""""""""""""""""""""""""""""" neocomplcache """"""""""""""""""""""""""""""""""
-let g:neocomplcache_enable_at_startup = 1
-" open the snippet
-imap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
-smap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
-
-"jump to next placeholder
-imap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
-smap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
-
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-
-
-
 """""""""""""""""""""""""""""""""" ctrlp """"""""""""""""""""""""""""""""""
+" start: <ctrl-p>
 let g:ctrlp_max_height = 10
 set wildignore+=*.pyc,*.swp,*.zip,*.exe
 
@@ -262,6 +264,63 @@ let g:pymode_syntax_builtin_funcs = 0
 """""""""""""""""""""""""""""""""" tasklist """"""""""""""""""""""""""""""""""
 let g:tlWindowPosition = 1   "底部显示
 let g:tlTokenList = ['TODO', 'UNDONE', 'HACK']
+
+
+
+"""""""""""""""""""""""""""""""""" snippets """"""""""""""""""""""""""""""""""
+"使用 neocomplcache & neosnippet & vim-snippets 组合
+
+let g:neocomplcache_enable_at_startup = 1
+" open the snippet
+imap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
+smap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
+
+" jump to next placeholder
+imap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
+smap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+
+
+" neosnippet 快捷键设定
+"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" tab补全
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+" 使用vim-snippets模板
+let g:neosnippet#enable_snipmate_compatibility = 1    "开启自动片断识别
+let g:neosnippet#snippets_directory='~/vimfiles/bundle/vim-snippets/snippets'
+
+
+
+"""""""""""""""""""""""""""""""""" Startify """"""""""""""""""""""""""""""""""
+"替换启动界面
+let g:startify_disable_at_vimenter = 0
+let g:startify_custom_header=''
+let g:startify_custom_footer='The time of life is short;
+\ to spend that shortness basely,
+\ it would be too long .
+\  via [William Shakewspeare]'
+
+
+
+"""""""""""""""""""""""""""""""""" Tabular """"""""""""""""""""""""""""""""""
+" 代码辅助对齐
+let g:tabular_loaded = 1
 
 
 
