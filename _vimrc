@@ -108,8 +108,8 @@ set fdm=indent      "启用代码折叠foldmethod,模式为indent，模式表
 
 
 "set background=dark
-colorscheme solarized                   " 自定义配色方案
-
+"colorscheme solarized                   " 自定义配色方案
+colorscheme monokai
 
 
 """""""""""""""""""""""""""""""""" 清除高亮及空格 """"""""""""""""""""""""""""""""""
